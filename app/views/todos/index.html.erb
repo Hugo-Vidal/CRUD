@@ -1,0 +1,17 @@
+<h1>Listado de To do</h1>
+<hr>
+<% @todos.each do |todo|%>
+    
+    <div class="card card-body bg-light">To do Nº: <%= todo.id %></div>
+    <div class="card card-body bg-light">Descripción: <%= todo.description %></div>
+    <div class="card card-body bg-light">Completado: <%= todo.completed %></div>
+    <div class="card card-body bg-light"> <%= link_to "Completar", complete_path(todo), class:"btn btn-primary"%> </div>
+
+    <div class="card card-body bg-light"> <%= link_to "Más detalle", todo %> </div>
+    <div class="card card-body bg-light"> <%= link_to "Editar", edit_path(todo)  %> </div>
+    <div class="card card-body bg-light"> <%= link_to "Borrar", todo, method: :delete %> </div>
+    <p></p>
+<% end %>
+
+<div> <%= link_to "Crear To do", todos_new_path, class:"btn btn-primary mb-6"%> </div>
+<p></p>
